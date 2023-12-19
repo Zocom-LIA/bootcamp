@@ -11,6 +11,30 @@ import {
       element: <LandingPage />,
     },
     {
+      path: "/login",
+      element: ,
+    },
+    {
+      path: "/menu",
+      element: ,
+    },
+    {
+      path: "/order",
+      element: ,
+    },
+    {
+      path: "/order/eta",
+      element: ,
+    },
+    {
+      path: "/order/receipt",
+      element: ,
+    },
+    {
+      path: "/staff/orders",
+      element: ,
+    },
+    {
       path: "*",
       element: <p>Page Not Found</p>,
     },
