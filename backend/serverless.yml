@@ -1,0 +1,53 @@
+service: aws
+frameworkVersion: '3'
+useDotenv: true
+
+provider:
+  stage: dev
+  name: aws
+  runtime: nodejs18.x
+  httpApi:
+    name: YYGS
+  iam:
+    role: arn:aws:iam::119763079540:role/test
+  region:
+    eu-north-1
+
+functions:
+  - ${file(./functions/functions.yml)}
+
+resources:
+  Resources:
+    YYGSUsers:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: YYGS_Users
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+    YYGSMenu:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: YYGS_Menu
+        AttributeDefinitions:
+          - AttributeName: name
+            AttributeType: S
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: name
+            KeyType: HASH
+    YYGSOrders:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: YYGS_Orders
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH

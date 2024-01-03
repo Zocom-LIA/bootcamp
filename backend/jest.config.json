@@ -1,0 +1,9 @@
+{
+    "verbose": true,
+    "preset": "@shelf/jest-dynamodb",
+    "coverageProvider": "v8",
+    "coverageReporters": ["html"],
+    "globals": {
+        "verbose": true
+    }
+}
