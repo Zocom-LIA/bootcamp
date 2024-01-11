@@ -1,0 +1,21 @@
+@use "@zocom/styles" as *;
+
+.order {
+  background-color: $colorAsh;
+  .order__section {
+    padding: $padding-sml;
+    width: 100%;
+    background-color: $colorAsh;
+
+    .order__empty-text {
+      text-align: center;
+      @include fontsizeRegular;
+      text-transform: uppercase;
+      margin: $baseline;
+    }
+
+    .button__stretch--dark {
+      margin-top: $baseline;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@use "@zocom/styles" as *;
+
+.receipt-view {
+  background-color: $colorSnow;
+  border-radius: $radius-tier-2;
+  padding-top: $padding-huge;
+  @include columnBasic;
+  gap: $baseline;
+  box-shadow: $shadow-medium;
+
+  .receipt-view__header {
+    border-radius: $radius-tier-2;
+    @include center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    .header__logo {
+      width: 40px;
+      margin-bottom: $baseline;
+    }
+
+    .header__text {
+      color: $colorCoal;
+      @include fontsizeLarge;
+    }
+
+    .header__order-id {
+      color: $colorClay;
+      @include fontsizeSmall;
+    }
+  }
+
+  ul {
+    .cart-item {
+      border: none;
+    }
+  }
+}

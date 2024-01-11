@@ -1,0 +1,43 @@
+@use "@zocom/styles" as *;
+
+.cart-item {
+  border-bottom: 1px solid $colorGray;
+  padding: $padding-sml $baseline;
+
+  .cart-item__details {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $colorCoal;
+    @include row;
+    @include fontsizeLarge;
+
+    .cart-item__divider {
+      font-weight: 300;
+      width: 100%;
+      border-bottom: 2px dotted black;
+      margin-bottom: 6px;
+    }
+
+    .cart-item__price {
+      white-space: nowrap;
+    }
+  }
+
+  .cart-item__amount {
+    align-items: center;
+    color: $colorCoal;
+    padding-top: $padding-sml;
+    @include row;
+
+    .cart-item__value {
+      @include fontsizeRegularSmall;
+    }
+
+    .cart-item__btn {
+      background-color: $colorGray;
+      font-weight: 200;
+      font-size: 30px;
+      @include circle;
+    }
+  }
+}

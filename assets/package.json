@@ -1,0 +1,4 @@
+{
+    "name": "@zocom/image",
+    "main": "./index.ts"
+}

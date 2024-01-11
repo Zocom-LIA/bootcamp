@@ -1,0 +1,29 @@
+@use "@zocom/styles" as *;
+
+.total {
+  background-color: $colorGray;
+  padding: $baseline;
+  color: $colorCoal;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: $radius-tier-2;
+  @include row;
+
+  .total__details {
+    .total__text {
+      text-transform: uppercase;
+      font-weight: 700;
+      @include fontsizeLarge;
+    }
+
+    .total__tax {
+      font-weight: 400;
+      @include fontsizeRegularSmall;
+    }
+  }
+  .total__price {
+    text-transform: uppercase;
+    font-weight: 700;
+    @include fontsizeExtraLarge;
+  }
+}

@@ -1,0 +1,68 @@
+@use '@zocom/styles' as *;
+
+.eta-page{
+    .header{
+        background-color: $colorClay;
+     }
+     
+    background-color: $colorClay;
+    //text-shadow: #3531313d 2.5px 1px 1px;
+    padding: $baseline;
+    @include column;
+    color: $colorSnow;
+    text-transform: uppercase;
+
+    &.order-done {
+        background-color: $colorDarkMint;
+    }
+
+
+    .eta-page__title{
+        padding: $padding-sml;
+   
+   
+    @include fontsizeExtraLarge;
+        font-weight: 600
+    }
+    
+    .eta-page__h2{
+        text-transform: uppercase;
+        @include fontsizeLarge;
+        font-weight: 500;
+        margin: $baseline;
+     
+    }
+
+
+    .eta-page__buttons{
+        @include column;
+        width: 100%;
+        margin-top: $margin-huge;
+
+
+        .button__regular--default,
+        .button__stretch--default {
+            background-color: $colorClay;
+            border: $colorSnow 2px solid;
+            color: $colorSnow;
+            text-transform: uppercase;
+            @include fontsizeLarge;
+            font-weight: 600;
+
+            &:hover{
+                background-color:$colorCoal;
+                cursor: pointer;
+                border: none;
+            }
+           
+
+            
+        }
+
+    }
+
+  
+}
+
+
+
