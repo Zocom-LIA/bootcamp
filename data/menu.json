@@ -9,7 +9,8 @@
             "morot",
             "bladpersilja"
          ],
-         "price":9
+         "price":9,
+         "id": 1
       },
       {
          "name":"Bangkok",
@@ -22,7 +23,8 @@
             "lime",
             "koriander"
          ],
-         "price":9
+         "price":9,
+         "id": 2
       },
       {
          "name":"Ho Chi Minh",
@@ -36,7 +38,8 @@
             "ingefära",
             "tofu"
          ],
-         "price":9
+         "price":9,
+         "id": 3
       },
       {
          "name":"Paris",
@@ -48,7 +51,8 @@
             "basilika",
             "valnötspasta"
          ],
-         "price":9
+         "price":9,
+         "id": 4
       },
       {
          "name":"Oaxaca",
@@ -60,39 +64,46 @@
             "vitlök",
             "lime"
          ],
-         "price":9
+         "price":9,
+         "id": 5
       }
    ],
    "dip":[
       {
          "name":"Sweet Chili",
          "desc":"Stark och söt dip från Thailänska höglandet.",
-         "price":19
+         "price":19,
+         "id": 6
       },
       {
          "name":"Sweet n Sour",
          "desc":"Klassiska sötsura dipsåsen från Kina.",
-         "price":19
+         "price":19,
+         "id": 7
       },
       {
          "name":"Guacamole",
          "desc":"Avocado, tomat och kryddor i optimal kombination.",
-         "price":19
+         "price":19,
+         "id": 8
       },
       {
          "name":"Wonton Standard",
          "desc":"Smaksatt olja med soya, chili, vitlök & ingefära.",
-         "price":19
+         "price":19,
+         "id": 9
       },
       {
          "name":"Hot Mango",
          "desc":"Kryddstark och söt chunky mangodip.",
-         "price":19
+         "price":19,
+         "id": 10
       },
       {
          "name":"Chili Mayo",
          "desc":"Egengjord majonäs smaksatt med chili.",
-         "price":19
+         "price":19,
+         "id": 11
       }
    ]
 }

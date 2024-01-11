@@ -1,0 +1,112 @@
+service: aws
+frameworkVersion: "3"
+useDotenv: true
+
+provider:
+  name: aws
+  region: eu-north-1
+  profile: ${env:PROFILE}
+  iam:
+    role: ${env:LAMBDA_ROLE}
+  deploymentMethod: direct
+
+package:
+  individually: true
+
+plugins:
+  - serverless-webpack
+
+functions:
+  getMenu:
+    handler: "./src/functions/getMenu/index.handler"
+    events:
+      - httpApi:
+          path: /api/menu
+          method: GET
+  addToOrder:
+    handler: "./src/functions/addToOrder/index.handler"
+    events:
+      - httpApi:
+          path: /api/order
+          method: POST
+  postMenuItem:
+    handler: "./src/functions/postMenuItem/index.handler"
+    events:
+      - httpApi:
+          path: /api/menu/add
+          method: POST
+  removeFromOrder:
+    handler: "./src/functions/removeFromOrder/index.handler"
+    events:
+      - httpApi:
+          path: /api/order/delete/{orderId}
+          method: DELETE
+  placeOrder:
+    handler: "./src/functions/placeOrder/index.handler"
+    events:
+      - httpApi:
+          path: /api/order/placeOrder
+          method: POST
+  getOrder:
+    handler: "./src/functions/getOrder/index.handler"
+    events:
+      - httpApi:
+          path: /api/order/{orderId}
+          method: POST
+  registerUser:
+    handler: "./src/functions/registerUser/index.handler"
+    events:
+      - httpApi:
+          path: /api/user/register
+          method: post
+  loginUser:
+    handler: "./src/functions/loginUser/index.handler"
+    events:
+      - httpApi:
+          path: /api/user/login
+          method: post
+  getUser:
+    handler: "./src/functions/getUser/index.handler"
+    events:
+      - httpApi:
+          path: /api/user/{id}
+          method: get
+
+resources:
+  Resources:
+    YYGSUsers:
+      Type: AWS::DynamoDB::Table
+      DeletionPolicy: Delete
+      Properties:
+        TableName: YYGSUsers
+        AttributeDefinitions:
+          - AttributeName: userID
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userID
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+    YYGSMenu:
+      Type: AWS::DynamoDB::Table
+      DeletionPolicy: Retain
+      Properties:
+        TableName: YYGSMenu
+        AttributeDefinitions:
+          - AttributeName: name
+            AttributeType: S
+        KeySchema:
+          - AttributeName: name
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+    YYGSOrders:
+      Type: AWS::DynamoDB::Table
+      DeletionPolicy: Delete
+      Properties:
+        TableName: YYGSOrders
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST

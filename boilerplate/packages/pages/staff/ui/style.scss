@@ -1,0 +1,43 @@
+@use "@zocom/styles" as *;
+
+body {
+    background-color: $colorCoal;
+}
+
+.staff {
+    margin: $margin-large;
+
+    &__container {
+        @include row;
+        @include fontsizeRegular;
+        max-width: 37rem;
+        margin: 0 auto;
+    }
+
+    &__heading {
+        display: flex;
+        color: $colorAsh;
+        align-items: center;
+        font-weight: 700;
+        letter-spacing: 0.12rem;
+        text-transform: uppercase;
+        @include fontsizeRegular;
+        @include row;
+    }
+
+    &__line {
+        background-color: $colorLightGray;
+        margin: $margin-large 0 $margin-large 0;
+        text-align: center;
+    }
+
+    &__ongoing {
+        flex: 1;
+        margin-right: $margin-large;
+    }
+
+    &__done {
+        flex: 1;
+        margin-left: $margin-large;
+    }
+}

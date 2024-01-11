@@ -1,0 +1,53 @@
+@use "@zocom/styles" as *;
+
+.header {
+  width: 100%;
+  background-color: transparent;
+  padding: $baseline;
+  justify-content: space-between;
+
+  &.kitchen-view {
+    @include fontsizeExtraLarge;
+    background-color: $colorCoal;
+    color: $colorSnow;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 700;
+    padding: 0.5rem 0;
+  }
+
+  .header__icon--cart {
+    position: relative;
+    background-color: $colorAsh;
+    padding: $baseline;
+    text-decoration: none;
+    color: $colorSnow;
+
+    .cart__count {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #eb5757;
+      border-radius: $radius-tier-4;
+      text-align: center;
+      padding: 3px 11px;
+      margin: -11px;
+      margin-right: -11px;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  @include row;
+  @include fontsizeRegular;
+}
+
+
+@media (max-width: $tabletBreakpoint) {
+  .kitchen-view {
+    justify-content: flex-start;
+    padding: 0.5rem 0;
+  }
+}

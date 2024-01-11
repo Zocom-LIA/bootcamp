@@ -13,7 +13,7 @@ type ButtonProps = {
     children: ReactNode | ReactNode[];
     style?: StyleTypes;
     type?: ButtonType; 
-    onClick: () => void;
+    onClick?: () => void;
 }
 
 /* Component */
@@ -24,5 +24,5 @@ export const Button = ({
     onClick
 }: ButtonProps) => {
     return (
-        <button className={`button__${type}--${style}`} onClick={() => onClick()}>{children}</button>)
+        <button className={`button__${type}--${style}`} onClick={() => (onClick ? onClick() : null)}>{children}</button>)
 }

@@ -1,0 +1,34 @@
+@use "@zocom/styles" as *;
+
+.receipt {
+  background-color: $colorClay;
+  .receipt__section {
+    padding: $baseline;
+    width: 100%;
+    height: 700px; // temporary until mobile view layout for all
+    @include columnBasic;
+    justify-content: space-between;
+  }
+
+  .cart-item__details {
+    @include fontsizeRegular;
+  }
+
+  .cart-item__value {
+    @include fontsizeSmall;
+  }
+
+  .total {
+    .total__text {
+      @include fontsizeRegular;
+    }
+
+    .total__tax {
+      @include fontsizeSmall;
+    }
+
+    .total__price {
+      @include fontsizeLarge;
+    }
+  }
+}
