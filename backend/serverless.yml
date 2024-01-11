@@ -1,0 +1,61 @@
+service: aws
+frameworkVersion: '3'
+useDotenv: true
+configValidationMode: error
+package:
+  individually: true
+
+provider:
+  stage: dev
+  name: aws
+  runtime: nodejs18.x
+  httpApi:
+    name: YYGS
+  profile:
+    ${env:AWS_PROFILE}
+  iam:
+    role: ${env:AWS_ROLE}
+  region:
+    ${env:AWS_REGION}
+
+functions:
+  - ${file(./functions/functions.yml)}
+
+resources:
+  Resources:
+    YYGSUsers:
+      Type: AWS::DynamoDB::Table
+      DeletionPolicy: Delete
+      Properties:
+        TableName: YYGSUsers
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+    YYGSMenu:
+      Type: AWS::DynamoDB::Table
+      DeletionPolicy: Retain
+      Properties:
+        TableName: YYGSMenu
+        AttributeDefinitions:
+          - AttributeName: name
+            AttributeType: S
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: name
+            KeyType: HASH
+    YYGSOrders:
+      Type: AWS::DynamoDB::Table
+      DeletionPolicy: Delete
+      Properties:
+        TableName: YYGSOrders
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
